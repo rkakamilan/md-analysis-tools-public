@@ -1,0 +1,69 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "mdatools"
+version = "0.2.0"
+description = "Generic MD analysis tools for protein-ligand simulations"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "rkakamilan" }]
+keywords = ["molecular dynamics", "MDAnalysis", "hydrogen bonds", "RMSD", "protein-ligand"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+    "Topic :: Scientific/Engineering :: Chemistry",
+    "Intended Audience :: Science/Research",
+]
+requires-python = ">=3.10"
+dependencies = [
+    "MDAnalysis>=2.7",
+    "numpy>=1.24",
+    "pandas>=2.0",
+    "scipy>=1.11",
+    "pydantic>=2.0",
+    "matplotlib>=3.8",
+    "seaborn>=0.13",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "pytest-cov", "ipykernel"]
+notebook = ["jupyterlab>=4.0"]
+movie = ["Pillow>=10.0"]
+posebusters = ["posebusters>=0.6", "rdkit>=2023.9"]
+pocket = ["rdkit>=2023.9", "cairosvg>=2.7", "Pillow>=10.0"]
+gdrive = [
+    "google-auth>=2.0",
+    "google-auth-oauthlib>=1.0",
+    "google-api-python-client>=2.0",
+    "tqdm>=4.0",
+]
+interactions = ["prolif>=2.0"]
+dimensionality = ["scikit-learn>=1.3"]
+admet = ["rdkit>=2023.9"]
+hole2 = ["mdahole2>=0.1.0"]
+viewer = ["nglview>=3.0", "ipywidgets>=8.0"]
+repair = ["pdbfixer>=1.9", "openmm>=8.0"]
+
+[project.scripts]
+mdatools-batch-hbonds  = "mdatools.cli.batch_hbonds:main"
+mdatools-batch-rmsd    = "mdatools.cli.batch_rmsd:main"
+mdatools-movie         = "mdatools.cli.make_movie:main"
+mdatools-pb-validate   = "mdatools.cli.pb_validate:main"
+mdatools-gdrive-sync   = "mdatools.cli.gdrive_sync:main"
+
+[project.urls]
+Homepage   = "https://github.com/rkakamilan/md-analysis-tools-public"
+Repository = "https://github.com/rkakamilan/md-analysis-tools-public"
+Issues     = "https://github.com/rkakamilan/md-analysis-tools-public/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/mdatools"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

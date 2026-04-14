@@ -14,8 +14,8 @@ uv add mdatools
 ### バージョン固定（推奨）
 
 ```bash
-pip install "mdatools==0.2.0"
-uv add "mdatools==0.2.0"
+pip install "mdatools==0.2.1"
+uv add "mdatools==0.2.1"
 ```
 
 ### Optional extras

@@ -64,9 +64,13 @@ def plot_rmsd_grid(
     n_samples = len(results_dict)
     n_rows = math.ceil(n_samples / n_cols)
     fig, axes = plt.subplots(
-        n_rows, n_cols, figsize=(5 * n_cols, 4 * n_rows), constrained_layout=True
+        n_rows,
+        n_cols,
+        figsize=(5 * n_cols, 4 * n_rows),
+        constrained_layout=True,
+        squeeze=False,
     )
-    axes_flat = axes.flatten() if n_samples > 1 else [axes]
+    axes_flat = axes.flatten()
 
     for i, (name, res) in enumerate(results_dict.items()):
         plot_rmsd_single(

@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "mdatools"
-version = "0.2.1"
+version = "0.2.2"
 description = "Generic MD analysis tools for protein-ligand simulations"
 readme = "README.md"
 license = { text = "MIT" }

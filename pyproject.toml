@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "mdatools"
-version = "0.2.2"
+version = "0.3.0"
 description = "Generic MD analysis tools for protein-ligand simulations"
 readme = "README.md"
 license = { text = "MIT" }
@@ -46,6 +46,11 @@ gdrive = [
 interactions = ["prolif>=2.0"]
 dimensionality = ["scikit-learn>=1.3"]
 admet = ["rdkit>=2023.9"]
+docking = [
+    "rdkit>=2023.9",
+    "scikit-learn>=1.3",
+    "prolif>=2.0",
+]
 hole2 = ["mdahole2>=0.1.0"]
 viewer = ["nglview>=3.0", "ipywidgets>=8.0"]
 repair = ["pdbfixer>=1.9", "openmm>=8.0"]

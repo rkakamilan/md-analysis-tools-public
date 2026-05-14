@@ -4,7 +4,6 @@ Wraps the ProLIF library with a stable, backend-agnostic interface.
 The resulting DataFrame uses flat column names of the form
 ``<RESIDUE>_<InteractionType>`` (e.g. ``GLN30_HBAcceptor``).
 
-Ported from ``docking_analysis.fingerprints.prolif``.
 """
 
 from __future__ import annotations

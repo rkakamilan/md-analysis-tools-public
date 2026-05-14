@@ -3,7 +3,6 @@
 Aggregates docking scores from multiple receptor conformations (or
 multiple docking engines) into a single consensus score per compound.
 
-Ported from ``docking_analysis.analysis.consensus``.
 
 Example::
 

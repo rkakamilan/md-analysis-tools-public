@@ -1,12 +1,8 @@
-"""Unified PoseBusters pose quality gate.
-
-Replaces duplicate implementations in:
-  - ``mdatools.posebusters.batch_validator.PoseBustersValidator``
-  - ``docking_analysis.analysis.posebusters.validate_poses_posebusters``
+"""PoseBusters pose quality gate.
 
 This module supports two input modes:
 
-**Mode A — trajectory frames (md-analysis-tools workflow)**::
+**Mode A — trajectory frames**::
 
     result = bust_trajectory_poses(
         pdb_dir=Path("frames/"),
@@ -15,7 +11,7 @@ This module supports two input modes:
     )
     print(result.pass_rate)
 
-**Mode B — RDKit Mol list (docking-analysis-tools workflow)**::
+**Mode B — RDKit Mol list**::
 
     valid_df, valid_mols = bust_rdkit_poses(
         mols=docked_mols,

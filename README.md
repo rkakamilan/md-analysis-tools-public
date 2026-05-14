@@ -188,26 +188,18 @@ src/mdatools/
 
 ---
 
-## Related Tools
-
-| Tool | 役割 |
-|---|---|
-| [docking-analysis-tools](https://github.com/rkakamilan/docking-analysis-tools) | ドッキング結果解析・ポーズフィルタリング・仮想スクリーニング評価 (EF / ROC-AUC) |
-
-### 連携ワークフロー
+## Ensemble docking workflow
 
 ```
-mdatools                          docking-analysis-tools
+mdatools (MD analysis)            mdatools.docking (virtual screening)
 ─────────────────────────────     ──────────────────────────────────
-MD トラジェクトリ解析
-  └─ PoseClusterer
-      代表コンフォメーション PDB ──► 受容体準備 → ドッキング実行
-                                    ポーズフィルタリング・クラスタリング
-                                    EF / ROC-AUC で最良コンフォメーション選定
-上位ヒットの MD バリデーション ◄── 上位ポーズ PDB
-  └─ RMSD · H-bond · コンセンサス
-      最終ヒットリスト
+MD trajectory analysis
+  └─ representative conformation ──► receptor prep → docking execution
+                                     pose filtering / clustering
+                                     EF / ROC-AUC evaluation
+MD validation of top hits ◄──────── top-ranked pose PDB
+  └─ RMSD · H-bond · consensus
+      final hit list
 ```
 
-アンサンブルドッキング（MD コンフォメーション → ドッキング → VS 評価）の
-詳細な手順は [`docs/ensemble_docking.md`](docs/ensemble_docking.md) を参照。
+詳細は [`docs/ensemble_docking.md`](docs/ensemble_docking.md) を参照。

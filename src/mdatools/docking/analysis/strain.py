@@ -12,7 +12,6 @@ Two protocols are provided:
   moved in the free-state minimisation; heavy atoms are frozen.  Avoids
   excessive strain penalties for macrocycles and flexible linkers.
 
-Ported from ``docking_analysis.analysis.strain``.
 
 Example::
 

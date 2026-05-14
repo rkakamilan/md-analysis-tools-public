@@ -3,7 +3,6 @@
 Implements non-dominated sorting to rank compounds across multiple
 scoring objectives (e.g. docking score + LE + QED).
 
-Ported from ``docking_analysis.selection.pareto``.
 
 Example::
 

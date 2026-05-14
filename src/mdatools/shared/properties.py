@@ -1,8 +1,4 @@
-"""Unified molecular property calculation — shared between md-analysis-tools and docking-analysis-tools.
-
-This module replaces:
-  - ``mdatools.analysis.admet.ADMETResult`` / ``ADMETCalculator``
-  - ``docking_analysis.analysis.properties.LigandProperties`` / ``calculate_properties``
+"""Molecular property calculation utilities.
 
 All calculation uses RDKit descriptors applied to the 2D molecular graph
 (no 3D conformer required).  SA score and PAINS detection are opt-in
@@ -32,12 +28,6 @@ Example
 >>> props.mw, props.le, props.lipinski_pass
 (474.58, 0.288, True)
 
-Backward compatibility
-----------------------
-The legacy entry points remain functional:
-
-``mdatools.analysis.admet.ADMETCalculator`` → delegates to this module.
-``docking_analysis.analysis.properties.calculate_properties`` → thin alias.
 """
 
 from __future__ import annotations
@@ -75,10 +65,6 @@ VEBER_ROTBONDS_MAX: int = 10
 @dataclass
 class MolecularProperties:
     """Molecular properties computed from the 2D graph.
-
-    This is the **canonical** dataclass that replaces both
-    ``ADMETResult`` (md-analysis-tools) and ``LigandProperties``
-    (docking-analysis-tools).
 
     Attributes
     ----------

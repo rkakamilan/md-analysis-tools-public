@@ -4,7 +4,6 @@ Provides utilities for benchmarking docking protocols via RMSD to
 crystal-structure reference poses, and for verifying that docked poses
 lie within the sampling grid box.
 
-Ported from ``docking_analysis.analysis.validation``.
 
 Example::
 

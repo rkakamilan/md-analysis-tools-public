@@ -4,7 +4,6 @@ Filters are chained with :func:`apply_filters`.  Each filter returns a
 boolean mask over the poses DataFrame; masks are combined with AND or OR
 logic.
 
-Ported from ``docking_analysis.selection.filters``.
 
 Example::
 

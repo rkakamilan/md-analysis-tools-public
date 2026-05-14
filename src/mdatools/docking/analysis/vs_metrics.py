@@ -3,7 +3,6 @@
 Provides Enrichment Factor (EF), ROC-AUC, and BEDROC for evaluating
 docking and scoring functions against known actives.
 
-Ported from ``docking_analysis.analysis.vs_metrics``.
 
 Example::
 

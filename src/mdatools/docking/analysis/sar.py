@@ -3,7 +3,6 @@
 Provides maximum common substructure (MCS) analysis and Bemis-Murcko
 scaffold grouping for structure-activity relationship exploration.
 
-Ported from ``docking_analysis.analysis.sar``.
 
 Example::
 

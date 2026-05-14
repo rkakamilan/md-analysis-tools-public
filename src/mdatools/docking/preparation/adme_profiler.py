@@ -3,7 +3,6 @@
 Computes Lipinski Ro5, Veber, QED, and PAINS flags for compound libraries.
 Includes radar chart and distribution plot utilities.
 
-Ported from ``docking_analysis.preparation.adme_profiler``
 (TeachOpenCADD T002 inspired).
 
 Example::

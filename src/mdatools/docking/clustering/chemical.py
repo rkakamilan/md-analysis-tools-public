@@ -3,7 +3,6 @@
 Clusters compounds by 2D molecular fingerprint similarity using either
 KMeans or RDKit Butina algorithm.  Supports 5 fingerprint types.
 
-Ported from ``docking_analysis.clustering.chemical``.
 
 Example::
 

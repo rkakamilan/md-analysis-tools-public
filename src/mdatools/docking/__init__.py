@@ -83,6 +83,18 @@ from .library_design.pharmacophore import (
     screen_library,
 )
 from .lbvs.screener import LBVSResult, LBVSScreener, diverse_subset
+# Phase A migration
+from ._typing import DockingResult
+from .io.base import PoseReader
+from .io.sdf import SDFPoseReader
+from .clustering.hierarchical import ClusteringResult, cluster_poses, find_optimal_threshold
+from .clustering.scaffold_network import build_scaffold_network, scaffold_counts
+from .clustering.rmsd import compute_rmsd_matrix
+from .analysis.bootstrap import BootstrapEvaluator, BootstrapResult
+from .preparation.gridbox import GridBox, gridbox_from_ligand, write_vina_config
+from .preparation.normalize import standardize_mol, standardize_df
+from .library_design.ro3_filter import ro3_filter, Ro3Thresholds
+from .library_design.mcs_clusterer import MCSClusterer
 
 __all__ = [
     # fingerprints
@@ -157,4 +169,30 @@ __all__ = [
     "LBVSResult",
     "LBVSScreener",
     "diverse_subset",
+    # io
+    "DockingResult",
+    "PoseReader",
+    "SDFPoseReader",
+    # clustering — hierarchical + scaffold network + RMSD
+    "ClusteringResult",
+    "cluster_poses",
+    "find_optimal_threshold",
+    "build_scaffold_network",
+    "scaffold_counts",
+    "compute_rmsd_matrix",
+    # selection — diversity + workflow + splitters
+    # analysis — bootstrap + interaction scoring + model comparison + pocket similarity
+    "BootstrapEvaluator",
+    "BootstrapResult",
+    # preparation — gridbox + normalize
+    "GridBox",
+    "gridbox_from_ligand",
+    "write_vina_config",
+    "standardize_mol",
+    "standardize_df",
+    # geometry
+    # library_design — fragment library + diversity
+    "ro3_filter",
+    "Ro3Thresholds",
+    "MCSClusterer",
 ]
